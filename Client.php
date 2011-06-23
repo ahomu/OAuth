@@ -34,7 +34,6 @@ class OAuth_Client
      * @param string $secret
      * @param string $token
      * @param string $token_secret
-     * @return void
      */
     public function __construct($key, $secret, $token = null, $token_secret = null)
     {
@@ -61,7 +60,7 @@ class OAuth_Client
      * @param string $token_secret
      * @return OAuth_RequestClient
      */
-    static public function RequestToken($consumer, $token, $token_secret)
+    public static function RequestToken($consumer, $token, $token_secret)
     {
         return new OAuth_RequestClient($consumer, $token, $token_secret);
     }
@@ -74,7 +73,7 @@ class OAuth_Client
      * @param string $token_secret
      * @return OAuth_AccessClient
      */
-    static public function AccessToken($consumer, $token, $token_secret)
+    public static function AccessToken($consumer, $token, $token_secret)
     {
         return new OAuth_AccessClient($consumer, $token, $token_secret);
     }

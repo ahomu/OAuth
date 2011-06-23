@@ -41,7 +41,6 @@ abstract class OAuth_Consumer
      *
      * @param string $key
      * @param string $secret
-     * @return void
      */
     protected function __construct($key, $secret)
     {

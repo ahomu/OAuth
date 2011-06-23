@@ -18,12 +18,12 @@ class OAuth_Signature
      * @param string $token_secret
      * @return string
      */
-    static public function hmacSha1($base, $consumer_secret, $token_secret = '')
+    public static function hmacSha1($base, $consumer_secret, $token_secret = '')
     {
         $keys   = array(
-                        OAuth_Signature::rfc3986($consumer_secret),
-                        OAuth_Signature::rfc3986($token_secret),
-                        );
+            OAuth_Signature::rfc3986($consumer_secret),
+            OAuth_Signature::rfc3986($token_secret),
+        );
 
         $key    = implode('&', $keys);
 
@@ -36,9 +36,8 @@ class OAuth_Signature
      * @param string $str
      * @return mixed
      */
-    static public function rfc3986($str)
+    public static function rfc3986($str)
     {
         return str_replace('%7E', '~', rawurlencode($str));
     }
-
 }
